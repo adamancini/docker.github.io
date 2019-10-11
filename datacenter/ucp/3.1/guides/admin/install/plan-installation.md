@@ -131,6 +131,19 @@ for all managers, rather than one for each manager node. In this case,
 the certificate files are copied automatically to any new
 manager nodes joining the cluster or being promoted to a manager role.
 
+For a single external certificate, we suggest using the UCP load balancer's
+hostname as the Subject, and including each manager's hostname and IP address
+as SANs:
+
+* Subject: ucp.domain.com
+* Subject Alternative Names:
+  * node1.domain.com
+  * 10.0.0.10
+  * node2.domain.com
+  * 10.0.0.11
+  * node3.domain.com
+  * 10.0.0.12
+
 ## Where to go next
 
 - [System requirements](system-requirements.md)
